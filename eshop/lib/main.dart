@@ -1,4 +1,5 @@
 import 'package:eshop/screens/login_screen.dart';
+import 'package:eshop/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,11 +15,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       routes: {
         "/login":(BuildContext contex) => LoginScreen(),
+        "/register":(BuildContext contex) => RegisterScreen(),
       },
         initialRoute: "/login",
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+
+
 
     );
   }

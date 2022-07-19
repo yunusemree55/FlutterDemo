@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "436807271139",
+    "project_id": "eshopfood-cfed2",
+    "storage_bucket": "eshopfood-cfed2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436807271139:android:0a74fe902653df12a3bbd6",
+        "android_client_info": {
+          "package_name": "com.example.eshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436807271139-v69k7cdhljf67mcre4jq2vglfplevqej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD19UhuMzcAk1IJPe-RROs4o40ofis24gs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436807271139-v69k7cdhljf67mcre4jq2vglfplevqej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
