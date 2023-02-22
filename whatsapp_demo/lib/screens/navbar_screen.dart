@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_demo/main.dart';
 import 'package:whatsapp_demo/models/colors.dart' as color;
 import 'package:whatsapp_demo/screens/chatbox_screen.dart';
+import 'package:whatsapp_demo/screens/status_screen.dart';
 
 class NavbarPage extends StatefulWidget {
   const NavbarPage({Key? key}) : super(key: key);
@@ -43,7 +44,7 @@ class _NavbarPageState extends State<NavbarPage> {
         body: TabBarView(
           children: [
             ChatScreen(),
-            MyHomePage(),
+            StatusScreen(),
             Text("data")
 
           ],

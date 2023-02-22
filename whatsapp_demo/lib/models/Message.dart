@@ -27,3 +27,5 @@ Message message4 = Message(id: 4, messageFrom: user4,message: "What did you say 
 Message message5 = Message(id: 5, messageFrom: user5,message: "Yesss, I hope we can handle it together :D " , time: "2:50 PM", isChecked: false, isMuted: false);
 
 List<Message> messages = [message1,message2,message3,message4,message5];
+
+User activeUser = User(id: 0, name: "Active User", imageUrl: "https://www.shareicon.net/data/512x512/2016/09/15/829466_man_512x512.png");
