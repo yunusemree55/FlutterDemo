@@ -4,13 +4,17 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+WhatsApp >>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Chatbox Screen 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image](https://user-images.githubusercontent.com/77694646/220525014-af8e9d1d-c8d3-4127-8ddd-91cf5eb2737b.png)
+
+
+
+Status Screen
+
+![Ekran görüntüsü 2023-02-22 074229](https://user-images.githubusercontent.com/77694646/220525140-6190bf72-bd22-4413-9201-2c71a70b7dfa.jpg)
+
+![Ekran görüntüsü 2023-02-22 074247](https://user-images.githubusercontent.com/77694646/220525161-5950ba50-dea4-4f5e-9213-99c4bc87f163.jpg)
