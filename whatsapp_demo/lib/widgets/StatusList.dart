@@ -15,6 +15,8 @@ class _StatusListState extends State<StatusList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
         itemCount: newStatusList.length,
         itemBuilder: (context, index) {
           final Status status = newStatusList[index];
@@ -70,7 +72,7 @@ class _StatusListState extends State<StatusList> {
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           );

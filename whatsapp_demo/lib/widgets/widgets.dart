@@ -5,7 +5,89 @@
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:whatsapp_demo/models/Message.dart';
 import 'package:whatsapp_demo/models/Status.dart';
+import 'package:whatsapp_demo/models/colors.dart' as color;
+
+
+//General Widgets
+
+
+Widget HorizontalLine(BuildContext context){
+  return Opacity(
+    opacity: 0.2,
+    child: Container(
+      width: MediaQuery.of(context).size.width,
+      height: 1,
+      decoration: BoxDecoration(
+          color: color.wpGrey
+      ),
+    ),
+  );
+}
+
+
+
+// Status Widgets
+
+Widget ActiveUserStatusLink(){
+  return Padding(
+    padding: const EdgeInsets.only(top: 15.0, left: 12, right: 12),
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: 60,
+          height: 55,
+          child: Stack(
+            children: [
+              CircleAvatar(
+                backgroundImage: NetworkImage(activeUser.imageUrl),
+                radius: 25,
+              ),
+              Positioned(
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: color.wpGreen,
+                        shape: BoxShape.circle,
+                        border:
+                        Border.all(color: color.wpDark, width: 2)),
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    )),
+                bottom: 3,
+                right: 5,
+              )
+            ],
+          ),
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 9.0, bottom: 3),
+              child: Text(
+                "My Status",
+                style: TextStyle(
+                    color: color.wpWhite,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17),
+              ),
+            ),
+            Text(
+              "Tap to add status update",
+              style: TextStyle(
+                color: color.wpGrey,
+              ),
+            ),
+          ],
+        )
+      ],
+    ),
+  );
+}
+
 
 Future<Object?> statusInfo(BuildContext context,Status status){
   return showGeneralDialog(
@@ -100,5 +182,26 @@ Future<Object?> statusInfo(BuildContext context,Status status){
 
 
 
+// CallScreen Widgets
 
+Widget CallLink(){
+  return Padding(
+    padding: const EdgeInsets.only(top: 15,left: 8,right: 8),
+    child: Row(
+      children: [
+        CircleAvatar(child: RotationTransition(turns: AlwaysStoppedAnimation(-30/360),child: Icon(Icons.link,color: Colors.white,size: 30,)),radius: 25,backgroundColor: color.wpGreen,),
+        SizedBox(width: 15,),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Create a call link",style: TextStyle(color: Colors.white,fontSize: 17,fontWeight: FontWeight.bold),),
+            SizedBox(height: 4,),
+            Opacity(opacity:0.7,child: Text("Share a link for your WhatsApp call",style: TextStyle(color: color.wpGrey,fontWeight: FontWeight.bold),))
+          ],
+        )
+
+      ],
+    ),
+  );
+}
 

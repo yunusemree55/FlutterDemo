@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:whatsapp_demo/main.dart';
 import 'package:whatsapp_demo/models/colors.dart' as color;
+import 'package:whatsapp_demo/screens/call_screen.dart';
 import 'package:whatsapp_demo/screens/chatbox_screen.dart';
 import 'package:whatsapp_demo/screens/status_screen.dart';
 
@@ -45,7 +46,7 @@ class _NavbarPageState extends State<NavbarPage> {
           children: [
             ChatScreen(),
             StatusScreen(),
-            Text("data")
+            CallsScreen()
 
           ],
         ),

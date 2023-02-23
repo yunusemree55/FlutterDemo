@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:whatsapp_demo/models/Message.dart';
 import 'package:whatsapp_demo/models/Status.dart';
 import 'package:whatsapp_demo/models/colors.dart' as color;
 import 'package:whatsapp_demo/widgets/StatusList.dart';
@@ -23,84 +21,53 @@ class _StatusScreenState extends State<StatusScreen> {
         backgroundColor: color.wpGreen,
         child: Icon(Icons.camera_alt_rounded),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 15.0, left: 12, right: 12),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 60,
-                  height: 55,
-                  child: Stack(
-                    children: [
-                      CircleAvatar(
-                        backgroundImage: NetworkImage(activeUser.imageUrl),
-                        radius: 25,
-                      ),
-                      Positioned(
-                        child: Container(
-                            decoration: BoxDecoration(
-                                color: color.wpGreen,
-                                shape: BoxShape.circle,
-                                border:
-                                    Border.all(color: color.wpDark, width: 2)),
-                            child: Icon(
-                              Icons.add,
-                              color: Colors.white,
-                            )),
-                        bottom: 3,
-                        right: 5,
-                      )
-                    ],
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+
+            ActiveUserStatusLink(),
+            SizedBox(
+              height: 30,
+            ),
+            if (newStatusList.length != 0) ...[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 9.0, bottom: 3),
-                      child: Text(
-                        "My Status",
-                        style: TextStyle(
-                            color: color.wpWhite,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17),
-                      ),
-                    ),
                     Text(
-                      "Tap to add status update",
+                      "Recent updates",
                       style: TextStyle(
-                        color: color.wpGrey,
-                      ),
+                          color: color.wpGrey, fontWeight: FontWeight.bold),
                     ),
                   ],
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          if (newStatusList.length != 0) ...[
+                ),
+              ),
+
+              StatusList(),
+
+            ],
+            SizedBox(height: 15,),
+
+            HorizontalLine(context),
+
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 15.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "Recent updates",
-                    style: TextStyle(
-                        color: color.wpGrey, fontWeight: FontWeight.bold),
-                  ),
+                  Opacity(opacity: 0.6,child: Icon(Icons.lock,color: color.wpGrey,size: 15,)),
+                  SizedBox(width: 8,),
+                  Opacity(opacity: 0.6,child: Text("Your Status updates are ",style: TextStyle(color: color.wpGrey),)),
+                  Text("end-to-end encrypted",style: TextStyle(color: color.wpGreen),)
                 ],
               ),
             ),
-            Expanded(
-              child: StatusList()
-            )
-          ]
-        ],
+            SizedBox(height: 10,)
+
+
+
+          ],
+        ),
       ),
     );
   }
