@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:whatsapp_demo/main.dart';
+
 import 'package:whatsapp_demo/models/colors.dart' as color;
 import 'package:whatsapp_demo/screens/call_screen.dart';
 import 'package:whatsapp_demo/screens/chatbox_screen.dart';
@@ -30,6 +30,7 @@ class _NavbarPageState extends State<NavbarPage> {
             IconButton(onPressed:(){},icon:Icon(Icons.search_outlined)),
             IconButton(onPressed:(){},icon:Icon(Icons.more_vert)),
           ],
+
           bottom: TabBar(
             indicatorColor: color.wpGreen,
             labelColor: color.wpGreen,

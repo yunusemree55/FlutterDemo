@@ -16,5 +16,6 @@ class Call{
 Call call1 = Call(id: 1, callFrom: user4, callCount: 2, date: DateTime.now(),isAnswered: true,isVoiceCall: true);
 Call call2 = Call(id: 2, callFrom: user5, callCount: 1, date: DateTime.now(),isAnswered: false,isVoiceCall: false);
 Call call3 = Call(id: 3, callFrom: user2, callCount: 3, date: DateTime.now(),isAnswered: true,isVoiceCall: true);
+Call call4 = Call(id: 3, callFrom: user3, callCount: 2, date: DateTime.now(),isAnswered: true,isVoiceCall: false);
 
-List<Call> calls = [call1,call2,call3];
+List<Call> calls = [call1,call2,call3,call4];

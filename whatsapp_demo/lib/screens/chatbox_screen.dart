@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_demo/models/colors.dart' as color;
 import 'package:whatsapp_demo/widgets/ChatList.dart';
+import 'package:whatsapp_demo/widgets/widgets.dart';
 
 
 class ChatScreen extends StatefulWidget {
@@ -27,8 +28,19 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
 
         backgroundColor: color.wpDark,
-        body: Container(
-          child: ChatList()
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              ChatList(),
+
+
+              HorizontalLine(context),
+
+              PrivacyInfo("Your personal messages are"),
+
+              SizedBox(height: 10,)
+            ],
+          ),
         ));
   }
 }

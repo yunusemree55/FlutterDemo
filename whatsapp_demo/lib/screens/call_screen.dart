@@ -43,21 +43,10 @@ class _CallsScreenState extends State<CallsScreen> {
 
             CallList(),
 
-            SizedBox(height: 25,),
             HorizontalLine(context),
 
-            Padding(
-              padding: const EdgeInsets.only(top: 15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Opacity(opacity: 0.6,child: Icon(Icons.lock,color: color.wpGrey,size: 15,)),
-                  SizedBox(width: 8,),
-                  Opacity(opacity: 0.6,child: Text("Your personal calls are ",style: TextStyle(color: color.wpGrey),)),
-                  Text("end-to-end encrypted",style: TextStyle(color: color.wpGreen),)
-                ],
-              ),
-            ),
+            PrivacyInfo("Your personal calls are"),
+
             SizedBox(height: 10,)
 
 

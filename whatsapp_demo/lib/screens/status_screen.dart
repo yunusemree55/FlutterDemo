@@ -16,15 +16,9 @@ class _StatusScreenState extends State<StatusScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: color.wpDark,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: color.wpGreen,
-        child: Icon(Icons.camera_alt_rounded),
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             ActiveUserStatusLink(),
             SizedBox(
               height: 30,
@@ -46,22 +40,12 @@ class _StatusScreenState extends State<StatusScreen> {
               StatusList(),
 
             ],
-            SizedBox(height: 15,),
+
 
             HorizontalLine(context),
 
-            Padding(
-              padding: const EdgeInsets.only(top: 15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Opacity(opacity: 0.6,child: Icon(Icons.lock,color: color.wpGrey,size: 15,)),
-                  SizedBox(width: 8,),
-                  Opacity(opacity: 0.6,child: Text("Your Status updates are ",style: TextStyle(color: color.wpGrey),)),
-                  Text("end-to-end encrypted",style: TextStyle(color: color.wpGreen),)
-                ],
-              ),
-            ),
+            PrivacyInfo("Your Status updates are"),
+
             SizedBox(height: 10,)
 
 
@@ -69,6 +53,13 @@ class _StatusScreenState extends State<StatusScreen> {
           ],
         ),
       ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: color.wpGreen,
+        child: Icon(Icons.camera_alt_rounded),
+      ),
+
     );
   }
 }

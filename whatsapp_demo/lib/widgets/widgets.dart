@@ -26,6 +26,25 @@ Widget HorizontalLine(BuildContext context){
   );
 }
 
+Widget PrivacyInfo(String text){
+
+
+  return Padding(
+    padding: const EdgeInsets.only(top: 15.0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Opacity(opacity: 0.6,child: Icon(Icons.lock,color: color.wpGrey,size: 15,)),
+        SizedBox(width: 8,),
+        Opacity(opacity: 0.6,child: Text("${text} ",style: TextStyle(color: color.wpGrey),)),
+        Text("end-to-end encrypted",style: TextStyle(color: color.wpGreen),)
+      ],
+    ),
+  );
+
+
+}
+
 
 
 // Status Widgets
@@ -204,4 +223,73 @@ Widget CallLink(){
     ),
   );
 }
+
+
+// ChatScreen Widgets
+
+
+class ChatTextFieldArea extends StatefulWidget {
+
+  late TextEditingController tfController;
+
+
+  ChatTextFieldArea(this.tfController);
+
+  @override
+  State<ChatTextFieldArea> createState() => _ChatTextFieldAreaState();
+}
+
+class _ChatTextFieldAreaState extends State<ChatTextFieldArea> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(left: 8.0,right: 8,bottom: 2),
+      child: Container(
+        child: Row(
+          children: [
+            Container(
+              height: 50,
+              width: MediaQuery.of(context).size.width-80,
+              decoration: BoxDecoration(
+                color: color.wpNavbar,
+                borderRadius: BorderRadius.all(Radius.circular(25)),
+              ),
+              child: Row(
+                children: [
+
+                  IconButton(onPressed: (){}, icon: Icon(Icons.tag_faces_rounded,color: color.wpGrey,)),
+                  Expanded(child: TextField(
+                    onChanged: (value){
+                      setState(() {
+
+                      });
+                    },
+                    controller: widget.tfController,
+                    decoration: InputDecoration.collapsed(
+                    hintText: "Message",
+                    hintStyle: TextStyle(color: color.wpGrey),
+                  ),style: TextStyle(color:Colors.white),)),
+                  RotationTransition(turns:AlwaysStoppedAnimation(-45/360) ,child: IconButton(onPressed: (){}, icon: Icon(Icons.attach_file,color: color.wpGrey,))),
+
+                  if(widget.tfController.text.isEmpty)...[
+                    IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt_rounded,color: color.wpGrey,))
+                  ]
+
+
+                ],
+              ),
+
+            ),
+            SizedBox(width: 5,),
+
+            FloatingActionButton(onPressed: (){},backgroundColor: color.wpGreen,child: widget.tfController.text.isEmpty ? Icon(Icons.mic): Icon(Icons.send),)
+
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 
